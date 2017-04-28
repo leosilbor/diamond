@@ -12,6 +12,11 @@ angular
       .when("/entrar", {
           templateUrl : "views/entrar.html"
       })
+      .when("/administracao", {
+          templateUrl : "views/administracao.html",
+          controller : "AdministracaoCtrl"
+
+      })
       .when("/cadastrar", {
           templateUrl : "views/cadastrar.html"
       })
@@ -45,6 +50,17 @@ angular
         function(response) {
             alert('erro');
         });
+    
+}).controller('AdministracaoCtrl', function($scope, $http){
+    $scope.salvarProduto = function() {
+        $http.post('http://localhost:8080/produtos', $scope.produto).then(
+        function(response) {
+            $scope.produto = {};
+        },
+        function(response) {
+            alert('erro');
+        });
+    };
     
 })
 ;

@@ -1,0 +1,208 @@
+<section class="section white-backgorund">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <h2 class="title">Dados da loja</h2>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                
+                <hr class="spacer-5"><hr class="spacer-20 no-border">
+                
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-lg-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-2 control-label">Nome</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control input-md" id="name" placeholder="Nome">
+                                </div>
+                            </div><!-- end form-group -->
+                            <div class="form-group">
+                                <label for="dsc" class="col-sm-2 control-label">Descrição</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control input-md" id="dsc" placeholder="Descrição">
+                                </div>
+                            </div><!-- end form-group -->
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Email <span class="text-danger">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control input-md" id="email" placeholder="Email">
+                                </div>
+                            </div><!-- end form-group -->
+                            <div class="form-group">
+                                <label for="tel" class="col-sm-2 control-label">Telefone</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control input-md" id="tel" placeholder="Telefone">
+                                </div>
+                            </div><!-- end form-group -->
+                            
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <a href="javascript:void(0);" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Salvar</a>
+                                </div>
+                            </div><!-- end form-group -->
+                        </form>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+        </div>
+
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <h2 class="title">Produtos</h2>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                
+                <hr class="spacer-5"><hr class="spacer-20 no-border">
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">    
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Valor</th>
+                                        <th>Qtd.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="produto in produtos">
+                                        <td>{{produto.hashImagemPrincipal}}</th>
+                                        <td>{{produto.nome}}</td>
+                                        <td>{{produto.descricao}}</td>
+                                        <td>{{produto.quantidade}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- end table-responsive -->
+                    </div>
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <a href="" class="btn btn-default round btn-md" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-user mr-5"></i> Novo</a>
+                        </div>
+                    </div><!-- end form-group -->
+                </div>
+            </div><!-- end col -->
+        </div>
+
+        <div class="modal fade productQuickView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h5>{{produto.nome}}</h5>
+                    </div><!-- end modal-header -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="carousel slide product-slider" data-ride="carousel" data-interval="false">
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <figure>
+                                                <img src="images/men_01.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+                                        <div class="item">
+                                            <figure>
+                                                <img src="images/men_02.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+                                        <div class="item">
+                                            <figure>
+                                                <img src="images/men_03.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+                                        <div class="item">
+                                            <figure>
+                                                <img src="images/men_04.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+                                        <div class="item">
+                                            <figure>
+                                                <img src="images/men_05.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+                                        <div class="item">
+                                            <figure>
+                                                <img src="images/men_06.jpg" alt="">
+                                            </figure>
+                                        </div><!-- end item -->
+
+                                        <!-- Arrows -->
+                                        <a class="left carousel-control" href="" data-target=".product-slider" data-slide="prev">
+                                            <span class="fa fa-angle-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="" data-target=".product-slider" data-slide="next">
+                                            <span class="fa fa-angle-right"></span>
+                                        </a>
+                                    </div><!-- end carousel-inner -->
+
+                                    <!-- thumbs -->
+                                    <ol class="carousel-indicators mCustomScrollbar meartlab">
+                                        <li data-target=".product-slider" data-slide-to="0" class="active"><img src="images/men_01.jpg" alt=""></li>
+                                        <li data-target=".product-slider" data-slide-to="1"><img src="images/men_02.jpg" alt=""></li>
+                                        <li data-target=".product-slider" data-slide-to="2"><img src="images/men_03.jpg" alt=""></li>
+                                        <li data-target=".product-slider" data-slide-to="3"><img src="images/men_04.jpg" alt=""></li>
+                                        <li data-target=".product-slider" data-slide-to="4"><img src="images/men_05.jpg" alt=""></li>
+                                        <li data-target=".product-slider" data-slide-to="5"><img src="images/men_06.jpg" alt=""></li>
+                                    </ol><!-- end carousel-indicators -->
+                                </div><!-- end carousel -->
+                            </div><!-- end col -->
+                            <div class="col-sm-7">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-10 col-lg-12">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="name" class="col-sm-2 control-label">Nome</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control input-md" id="name" placeholder="Nome" ng-model="produto.nome">
+                                                </div>
+                                            </div><!-- end form-group -->
+                                            <div class="form-group">
+                                                <label for="dsc" class="col-sm-2 control-label">Descrição</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control input-md" id="dsc" placeholder="Descrição" ng-model="produto.descricao">
+                                                </div>
+                                            </div><!-- end form-group -->
+                                            <div class="form-group">
+                                                <label for="vlr" class="col-sm-2 control-label">Valor</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control input-md" id="vlr" placeholder="Valor" ng-model="produto.valor">
+                                                </div>
+                                            </div><!-- end form-group -->
+                                            <div class="form-group">
+                                                <label for="qtd" class="col-sm-2 control-label">Quantidade</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control input-md" id="qtd" placeholder="Quantidade" ng-model="produto.quantidade">
+                                                </div>
+                                            </div><!-- end form-group -->
+                                            
+                                            
+                                        </form>
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                                
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <a href="" ng-click="salvarProduto()" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Salvar</a>
+                                    </div>
+                                </div><!-- end form-group -->
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end modal-body -->
+                </div><!-- end modal-content -->
+            </div><!-- end modal-dialog -->
+        </div><!-- end productRewiew -->
+    </div>
+</section>
