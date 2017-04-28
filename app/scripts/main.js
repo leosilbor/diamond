@@ -2,8 +2,7 @@
 
 $(document).ready(function(){
     
-    //sticky nav
-    $('.navbar').sticky({topSpacing:0});
+    
     
     // yamm menu
     $(document).on('click', '.yamm .dropdown-menu', function(e) {
