@@ -8,6 +8,7 @@
     <meta name="author" content="Too Solucoes em Software">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <base href="/">
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -50,8 +51,8 @@
                             <li><a href="http://diamondcreative.net/plus-v1.3/login.html">Entrar</a></li>
                             <li><a href="http://diamondcreative.net/plus-v1.3/register.html">Criar conta</a></li>
                             <li class="divider"></li>
-                            <li><a href="http://diamondcreative.net/plus-v1.3/cart.html">Carrinho</a></li>
-                            <li><a href="http://diamondcreative.net/plus-v1.3/checkout.html">Finalizar</a></li>
+                            <li><a href="carrinho">Carrinho</a></li>
+                            <li><a href="checkout">Finalizar</a></li>
                         </ul>
                     </li>
                     <li class="linkdown">
@@ -85,8 +86,8 @@
                             </li>
                             <li>
                                 <div class="cart-footer">
-                                    <a href="http://diamondcreative.net/plus-v1.3/cart.html" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>Ver carrinho</a>
-                                    <a href="http://diamondcreative.net/plus-v1.3/checkout.html" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Finalizar</a>
+                                    <a href="carrinho" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>Ver carrinho</a>
+                                    <a href="checkout" class="pull-right"><i class="fa fa-shopping-cart mr-5"></i>Finalizar</a>
                                 </div>
                             </li>
                         </ul>
@@ -105,7 +106,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="javascript:void(0);" class="navbar-brand">
+                    <a href="/" class="navbar-brand">
                         <img src="images/logo.png" alt="logo">
                     </a>
                 </div>
@@ -122,7 +123,8 @@
                                                 <li class="title">
                                                     <h6>Subcategoria 1.1</h6>
                                                 </li>
-                                                <li><a href="http://diamondcreative.net/plus-v1.3/shop-sidebar-left.html">Subsubcategoria 1.1.1</a></li>
+                                                <li><a href="./produtos">Subsubcategoria 1.1.1</a></li>
+                                                <li><a href="produtos">Todos</a></li>
                                             </ul><!-- end ul col -->
                                         </div><!-- end row -->
                                     </div><!-- end yamn-content -->
@@ -133,11 +135,23 @@
                 </div><!-- end navbar collapse -->
             </div><!-- end container -->
         </div></div><!-- end navbar -->
+        <div class="breadcrumbs">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li class="active">Shop Sidebar Left</li>
+                        </ul><!-- end breadcrumb -->
+                    </div><!-- end col -->    
+                </div><!-- end row -->
+            </div><!-- end container -->
         
-        
-        
+        </div>
         <!-- start section -->
-        <div ng-view>
+        <div ng-view="" ></div>
         
         <!-- start footer -->
         <footer class="footer">

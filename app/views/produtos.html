@@ -1,96 +1,94 @@
 <section class="section white-backgorund">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12" ng-init="activetab=1">
-                <div class="text-center">
-                    <ul class="nav nav-pills style1">
-                        <li ng-class="{active: activetab==1}" ng-click="activetab=1">
-                            <a href="" >
-                                Novidades
-                            </a>
-                        </li>
-                        <li ng-class="{active: activetab==2}" ng-click="activetab=2">
-                            <a href="" >
-                                Mais vendidos
-                            </a>
+            <!-- start sidebar -->
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h6 class="subtitle">Pesquisa</h6>
+                    
+                    <form>
+                        <input id="lastname" class="form-control input-sm" placeholder="Pesquisa" type="text">
+                    </form>
+                </div><!-- end widget -->
+                <div class="widget">
+                    <h6 class="subtitle">Subcategoria 1.1</h6>
+                    
+                    <ul class="list list-unstyled">
+                        <li>
+                            <div class="checkbox-input checkbox-default">
+                                <input id="mens-category" class="styled" checked="" type="checkbox">
+                                <label for="mens-category">
+                                    Subsubcategoria 1.1.1  <span class="text-dark">(11)</span>
+                                </label>
+                            </div>
                         </li>
                     </ul>
-                </div>
-
-                <div class="tab-content pills">
-                    <div class="tab-pane" ng-class="{active: activetab==1}" id="newArrivals">
-                        <div class="row column-4">
-                            <div class="col-sm-6 col-md-3">                                
-                                <div class="thumbnail store style3">
-                                    <div class="header">
-                                        <div class="badges">
-                                            <span class="product-badge top right text-warning">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </span>
-                                        </div>
-                                        <figure class="layer">
-                                            <a href="javascript:void(0);">
-                                                <img src="images/hoseholds_01.jpg" alt="">
-                                            </a>
-                                        </figure>
-                                        <div class="icons">
-                                            <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="caption">
-                                        <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a></h6>
-                                        <div class="price">
-                                            <span class="amount text-primary">$59.99</span>
-                                        </div>
-                                    </div><!-- end caption -->
-                                </div><!-- end thumbnail -->
-                            
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                    </div><!-- end tab-pane -->
-                    <div class="tab-pane" ng-class="{active: activetab==2}" id="topRated">
-                        <div class="row column-4">
-                            <div class="col-sm-6 col-md-3">                                
-                                <div class="thumbnail store style3">
-                                    <div class="header">
-                                        <div class="badges">
-                                            <span class="product-badge top right text-warning">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </span>
-                                        </div>
-                                        <figure class="layer">
-                                            <a href="javascript:void(0);">
-                                                <img src="images/hoseholds_03.jpg" alt="">
-                                            </a>
-                                        </figure>
-                                        <div class="icons">
-                                            <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="caption">
-                                        <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a></h6>
-                                        <div class="price">
-                                            <span class="amount text-primary">$59.99</span>
-                                        </div>
-                                    </div><!-- end caption -->
-                                </div><!-- end thumbnail -->
-                            
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                    </div><!-- end tab-pane -->
-                </div><!-- end pills content -->
+                </div><!-- end widget -->
             </div><!-- end col -->
+            <!-- end sidebar -->
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <h2 class="title">Subcategoria 1.1</h2>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                
+                <hr class="spacer-5"><hr class="spacer-20 no-border">
+                
+                <div class="row column-3">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail store style3">
+                            <div class="header">
+                                <div class="badges">
+                                    <span class="product-badge top right text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </span>
+                                </div>
+                                <figure class="layer">
+                                    <a href="javascript:void(0);">
+                                        <img src="images/hoseholds_01.jpg" alt="">
+                                    </a>
+                                </figure>
+                                <div class="icons">
+                                    <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a></h6>
+                                <div class="price">
+                                    <span class="amount text-primary">$59.99</span>
+                                </div>
+                            </div><!-- end caption -->
+                        </div><!-- end thumbnail -->
+                    </div><!-- end col -->
+                    
+                </div><!-- end row -->
+                
+                <hr class="spacer-10 no-border">
+                
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li class="active"><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                            </ul>
+                        </nav>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->   
         </div><!-- end row -->
+        
         <!-- Modal Product Quick View -->
         <div class="modal fade productQuickView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -212,6 +210,6 @@
                 </div><!-- end modal-content -->
             </div><!-- end modal-dialog -->
         </div><!-- end productRewiew -->
+        
     </div><!-- end container -->
 </section>
-
