@@ -26,7 +26,25 @@ angular
       });
 
       $locationProvider.html5Mode(true);
-}).controller('PrincipalCtrl', function($scope){
-
+}).controller('PrincipalCtrl', function($scope, $http){
+    $scope.greeting = function () {
+        $http.get('http://localhost:8080/greeting').then(
+        function(response) {
+            alert(response.data.content);
+        },
+        function(response) {
+            alert('erro');
+        });
+    };
     
-});
+}).controller('LojaCtrl', function($scope, $http){
+    $http.get('http://localhost:8080/lojas').then(
+        function(response) {
+            $scope.loja = response.data;
+        },
+        function(response) {
+            alert('erro');
+        });
+    
+})
+;
