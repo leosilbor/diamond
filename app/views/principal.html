@@ -20,7 +20,7 @@
                 <div class="tab-content pills">
                     <div class="tab-pane" ng-class="{active: activetab==1}" id="newArrivals">
                         <div class="row column-4">
-                            <div class="col-sm-6 col-md-3">                                
+                            <div class="col-sm-6 col-md-3" ng-repeat="produto in produtos">                                
                                 <div class="thumbnail store style3">
                                     <div class="header">
                                         <div class="badges">
@@ -39,13 +39,13 @@
                                         </figure>
                                         <div class="icons">
                                             <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
+                                            <a class="icon semi-circle" href="" ng-click="selecionarProduto(produto)" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
                                         </div>
                                     </div>
                                     <div class="caption">
-                                        <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a></h6>
+                                        <h6 class="regular"><a href="shop-single-product-v1.html">{{produto.nome}}</a></h6>
                                         <div class="price">
-                                            <span class="amount text-primary">$59.99</span>
+                                            <span class="amount text-primary">{{produto.valor}}</span>
                                         </div>
                                     </div><!-- end caption -->
                                 </div><!-- end thumbnail -->
@@ -99,7 +99,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
-                        <h5>Título</h5>
+                        <h5>{{produto.nome}}</h5>
                     </div><!-- end modal-header -->
                     <div class="modal-body">
                         <div class="row">
@@ -158,39 +158,14 @@
                                 </div><!-- end carousel -->
                             </div><!-- end col -->
                             <div class="col-sm-7">
-                                <p class="text-gray alt-font">Product code: 1032446</p>
-
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star-half-o text-warning"></i>
-                                <span>(12 reviews)</span>
-                                <h4 class="text-primary">$79.00</h4>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                
+                                <h4 class="text-primary">{{produto.valor}}</h4>
+                                <p>{{produto.descricao}}</p>
                                 <hr class="spacer-10">
                                 <div class="row">
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <select class="form-control" name="select">
-                                            <option value="" selected="">Color</option>
-                                            <option value="red">Red</option>
-                                            <option value="green">Green</option>
-                                            <option value="blue">Blue</option>
-                                        </select>
-                                    </div><!-- end col -->
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <select class="form-control" name="select">
-                                            <option value="">Size</option>
-                                            <option value="">S</option>
-                                            <option value="">M</option>
-                                            <option value="">L</option>
-                                            <option value="">XL</option>
-                                            <option value="">XXL</option>
-                                        </select>
-                                    </div><!-- end col -->
                                     <div class="col-md-4 col-sm-12">
                                         <select class="form-control" name="select">
-                                            <option value="" selected="">QTY</option>
+                                            <option value="" selected="">Qtd</option>
                                             <option value="">1</option>
                                             <option value="">2</option>
                                             <option value="">3</option>
@@ -203,8 +178,7 @@
                                 </div><!-- end row -->
                                 <hr class="spacer-10">
                                 <ul class="list list-inline">
-                                    <li><button type="button" class="btn btn-default btn-md round"><i class="fa fa-shopping-basket mr-5"></i>Add to Cart</button></li>
-                                    <li><button type="button" class="btn btn-gray btn-md round"><i class="fa fa-heart mr-5"></i>Add to Wishlist</button></li>
+                                    <li><button type="button" class="btn btn-default btn-md round"><i class="fa fa-shopping-basket mr-5"></i>Comprar</button></li>
                                 </ul>
                             </div><!-- end col -->
                         </div><!-- end row -->
