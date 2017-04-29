@@ -52,6 +52,14 @@ angular
         });
     
 }).controller('AdministracaoCtrl', function($scope, $http){
+        $http.get('http://localhost:8080/produtos').then(
+        function(response) {
+            $scope.produtos = response.data;
+        },
+        function(response) {
+            alert('erro');
+        });
+
     $scope.salvarProduto = function() {
         $http.post('http://localhost:8080/produtos', $scope.produto).then(
         function(response) {
