@@ -17,37 +17,32 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th colspan="2">Products</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
+                                        <th colspan="2">Produtos</th>
+                                        <th>Valor</th>
+                                        <th>Quantidade</th>
                                         <th colspan="2">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr ng-repeat="produto in carrinho.produtos">
                                         <td>
                                             <a href="shop-single-product-v1.html">
                                                 <img src="images/men_06.jpg" alt="product" width="60px">
                                             </a>
                                         </td>
                                         <td>
-                                            <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum</a></h6>
-                                            <p>Sed aliquam tincidunt tempus</p>
+                                            <h6 class="regular"><a href="shop-single-product-v1.html">{{produto.nome}}</a></h6>
+                                            <p>{{produto.descricao}}</p>
                                         </td>
                                         <td>
-                                            <span>$59.99</span>
+                                            <span>{{produto.valor}}</span>
                                         </td>
                                         <td>
-                                            <select class="form-control" name="select">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
+                                            <input type="number" class="form-control" ng-model="produto.quantidade"/>
+                                            
                                         </td>
                                         <td>
-                                            <span class="text-primary">$59.99</span>
+                                            <span class="text-primary">{{produto.valor*produto.quantidade}}</span>
                                         </td>
                                         <td>
                                             <button type="button" class="close">×</button>

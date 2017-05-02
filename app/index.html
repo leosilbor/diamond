@@ -27,15 +27,15 @@
     
     
 </head>
-    <body ng-app="diamond" ng-controller="LojaCtrl">
+    <body ng-app="diamond" ng-controller="LojaCtrl as ctrl">
         
         
         <!-- start topBar -->
         <div class="topBar">
             <div class="container">
                 <ul class="list-inline pull-left hidden-sm hidden-xs">
-                    <li><i class="fa fa-phone mr-5"></i>{{loja.telefone}}</li>
-                    <li><i class="fa fa-envelope mr-5"></i>{{loja.email}}</li>
+                    <li><i class="fa fa-phone mr-5"></i>{{ctrl.loja.telefone}}</li>
+                    <li><i class="fa fa-envelope mr-5"></i>{{ctrl.loja.email}}</li>
                 </ul>
                 
                 <ul class="topBarNav pull-right">
@@ -67,7 +67,7 @@
                         <a href="javascript:void(0);">
                             <i class="fa fa-shopping-cart mr-5"></i>
                             <span class="hidden-xs">
-                                Carrinho<sup class="text-primary">({{loja.carrinho.produtos.length}})</sup>
+                                Carrinho<sup class="text-primary">({{ctrl.loja.carrinho.quantidadeTotal}})</sup>
                                 <i class="fa fa-angle-down ml-5"></i>
                             </span>    
                         </a>
@@ -75,7 +75,7 @@
                             <li>
                                 <div class="cart-items">
                                     <ol class="items">
-                                        <li ng-repeat="produto in loja.carrinho.produtos"> 
+                                        <li ng-repeat="produto in ctrl.loja.carrinho.produtos"> 
                                             <a href="" class="product-image">
                                                 <img src="images/{{produto.idImagem}}" alt="{{produto.nome}}">
                                             </a>
@@ -84,7 +84,7 @@
                                                     <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
                                                 </div>
                                                 <p class="product-name"> 
-                                                    <a href="http://diamondcreative.net/plus-v1.3/shop-single-product-v1.html">{{produto.nome}}}</a> 
+                                                    <a href="http://diamondcreative.net/plus-v1.3/shop-single-product-v1.html">{{produto.nome}}</a> 
                                                 </p>
                                                 <strong>{{produto.quantidade}}</strong> x <span class="price text-primary">{{produto.valor}}</span>
                                             </div><!-- end product-details -->
@@ -115,13 +115,13 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="navbar-brand">
-                        <img src="images/{{loja.idLogo}}" alt="logo">
+                        <img src="images/{{ctrl.loja.idLogo}}" alt="logo">
                     </a>
                 </div>
                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <!-- Pages -->
-                        <li class="dropdown yamm-fw" ng-repeat="categoria in loja.menu.categorias">
+                        <li class="dropdown yamm-fw" ng-repeat="categoria in ctrl.loja.menu.categorias">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{categoria.nome}}<i class="fa fa-angle-down ml-5"></i></a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -168,8 +168,8 @@
                
                 <div class="row">
                     <div class="col-sm-3">
-                        <h5 class="title">{{loja.nome}}</h5>
-                        <p>{{loja.descricao}}</p>
+                        <h5 class="title">{{ctrl.loja.nome}}</h5>
+                        <p>{{ctrl.loja.descricao}}</p>
                         
                         <hr class="spacer-10 no-border">
                         
@@ -238,13 +238,19 @@
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/script.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/controllers/administracao.js"></script>
+        <script type="text/javascript" src="scripts/controllers/principal.js"></script>
+        <script type="text/javascript" src="scripts/controllers/produto.js"></script>
+        <script type="text/javascript" src="scripts/controllers/loja.js"></script>
+        <script type="text/javascript" src="scripts/controllers/carrinho.js"></script>
         <!-- endbuild -->
 
         

@@ -4,6 +4,7 @@
   "dependencies": {
     "angular": "1.6.1",
     "angular-route": "1.6.1",
+    "angular-cookies": "1.6.1",
     "bootstrap": "3.3.4",
     "fontawesome": "4.3.0" 
   },
