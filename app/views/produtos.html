@@ -36,7 +36,7 @@
                 <hr class="spacer-5"><hr class="spacer-20 no-border">
                 
                 <div class="row column-3">
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-6 col-md-4" ng-repeat="produto in produtos">
                         <div class="thumbnail store style3">
                             <div class="header">
                                 <div class="badges">
@@ -59,9 +59,9 @@
                                 </div>
                             </div>
                             <div class="caption">
-                                <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a></h6>
+                                <h6 class="regular"><a href="shop-single-product-v1.html">{{produto.nome}}</a></h6>
                                 <div class="price">
-                                    <span class="amount text-primary">$59.99</span>
+                                    <span class="amount text-primary">{{produto.valor}}</span>
                                 </div>
                             </div><!-- end caption -->
                         </div><!-- end thumbnail -->

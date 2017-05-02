@@ -132,8 +132,8 @@
                                                     <h6>{{subCategoria.nome}}</h6>
                                                 </li>
                                                 <li ng-repeat="subSubCategoria in subCategoria.subCategorias">
-                                                    <a href="produtos">{{subSubCategoria.nome}}</a></li>
-                                                <li><a href="produtos">Todas</a></li>
+                                                    <a href="produtos/{{subSubCategoria.id}}">{{subSubCategoria.nome}}</a></li>
+                                                <li><a href="produtos/{{subCategoria.id}}">Todas</a></li>
                                             </ul><!-- end ul col -->
                                         </div><!-- end row -->
                                     </div><!-- end yamn-content -->
@@ -168,8 +168,8 @@
                
                 <div class="row">
                     <div class="col-sm-3">
-                        <h5 class="title">Loja</h5>
-                        <p>Descrição da loja.</p>
+                        <h5 class="title">{{loja.nome}}</h5>
+                        <p>{{loja.descricao}}</p>
                         
                         <hr class="spacer-10 no-border">
                         

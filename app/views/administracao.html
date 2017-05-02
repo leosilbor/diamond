@@ -70,6 +70,7 @@
                                         <th>Descrição</th>
                                         <th>Valor</th>
                                         <th>Qtd.</th>
+                                        <th>Categoria</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,6 +80,7 @@
                                         <td>{{produto.descricao}}</td>
                                         <td>{{produto.valor}}</td>
                                         <td>{{produto.quantidade}}</td>
+                                        <td>{{produto.categoria.nome}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -186,6 +188,13 @@
                                                 <label for="qtd" class="col-sm-2 control-label">Quantidade</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control input-md" id="qtd" placeholder="Quantidade" ng-model="produto.quantidade">
+                                                </div>
+                                            </div><!-- end form-group -->
+                                            <div class="form-group">
+                                                <label for="cat" class="col-sm-2 control-label">Categoria</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control input-md" id="cat" ng-model="produto.categoria" ng-options="categoria as categoria.nome for categoria in categorias" />
+
                                                 </div>
                                             </div><!-- end form-group -->
                                             
