@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="diamond">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Loja</title>
@@ -8,7 +8,7 @@
     <meta name="author" content="Too Solucoes em Software">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <base href="/">
+    <!--<base href="/">-->
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -27,20 +27,20 @@
     
     
 </head>
-    <body ng-app="diamond" ng-controller="LojaCtrl as ctrl">
+    <body ng-app="diamond" >
         
         
         <!-- start topBar -->
         <div class="topBar">
             <div class="container">
                 <ul class="list-inline pull-left hidden-sm hidden-xs">
-                    <li><i class="fa fa-phone mr-5"></i>{{ctrl.loja.telefone}}</li>
-                    <li><i class="fa fa-envelope mr-5"></i>{{ctrl.loja.email}}</li>
+                    <li><i class="fa fa-phone mr-5"></i>{{loja.telefone}}</li>
+                    <li><i class="fa fa-envelope mr-5"></i>{{loja.email}}</li>
                 </ul>
                 
                 <ul class="topBarNav pull-right">
                     <li class="linkdown">
-                        <a href="administracao">
+                        <a href="#!/{{loja.login}}/administracao">
                             <i class="fa fa-database mr-5"></i>
                             <span class="hidden-xs">
                                 Administração
@@ -67,7 +67,7 @@
                         <a href="javascript:void(0);">
                             <i class="fa fa-shopping-cart mr-5"></i>
                             <span class="hidden-xs">
-                                Carrinho<sup class="text-primary">({{ctrl.loja.carrinho.quantidadeTotal}})</sup>
+                                Carrinho<sup class="text-primary">({{loja.carrinho.quantidadeTotal}})</sup>
                                 <i class="fa fa-angle-down ml-5"></i>
                             </span>    
                         </a>
@@ -75,7 +75,7 @@
                             <li>
                                 <div class="cart-items">
                                     <ol class="items">
-                                        <li ng-repeat="produto in ctrl.loja.carrinho.produtos"> 
+                                        <li ng-repeat="produto in loja.carrinho.produtos"> 
                                             <a href="" class="product-image">
                                                 <img src="images/{{produto.idImagem}}" alt="{{produto.nome}}">
                                             </a>
@@ -94,8 +94,8 @@
                             </li>
                             <li>
                                 <div class="cart-footer">
-                                    <a href="carrinho" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>Ver carrinho</a>
-                                    <a href="checkout" class="pull-right"><i class="fa fa-shopping-cart mr-5"></i>Finalizar</a>
+                                    <a href="#!/{{loja.login}}/carrinho" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>Ver carrinho</a>
+                                    <a href="#!/{{loja.login}}/checkout" class="pull-right"><i class="fa fa-shopping-cart mr-5"></i>Finalizar</a>
                                 </div>
                             </li>
                         </ul>
@@ -115,13 +115,13 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="navbar-brand">
-                        <img src="images/{{ctrl.loja.idLogo}}" alt="logo">
+                        <img src="images/{{loja.idLogo}}" alt="logo">
                     </a>
                 </div>
                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <!-- Pages -->
-                        <li class="dropdown yamm-fw" ng-repeat="categoria in ctrl.loja.menu.categorias">
+                        <li class="dropdown yamm-fw" ng-repeat="categoria in loja.menu.categorias">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{categoria.nome}}<i class="fa fa-angle-down ml-5"></i></a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -168,8 +168,8 @@
                
                 <div class="row">
                     <div class="col-sm-3">
-                        <h5 class="title">{{ctrl.loja.nome}}</h5>
-                        <p>{{ctrl.loja.descricao}}</p>
+                        <h5 class="title">{{loja.nome}}</h5>
+                        <p>{{loja.descricao}}</p>
                         
                         <hr class="spacer-10 no-border">
                         
@@ -246,13 +246,13 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script type="text/javascript" src="scripts/script.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/services/loja.js"></script>
         <script type="text/javascript" src="scripts/controllers/administracao.js"></script>
         <script type="text/javascript" src="scripts/controllers/principal.js"></script>
         <script type="text/javascript" src="scripts/controllers/produto.js"></script>
         <script type="text/javascript" src="scripts/controllers/loja.js"></script>
         <script type="text/javascript" src="scripts/controllers/carrinho.js"></script>
         <!-- endbuild -->
-
         
         
     </body>

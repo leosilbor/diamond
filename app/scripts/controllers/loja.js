@@ -1,26 +1,18 @@
 'use strict';
 
 angular.module('diamond')
-.controller('LojaCtrl', function($http, $window, $cookies){
-    var ctrl = this;
-    ctrl.loja = null;
-
-    // $cookies.remove('loja');
-
-    if ( !$cookies.getObject('loja') ) {
-        $http.get('http://localhost:8080/lojas/1').then(
-            function(response) {
-                ctrl.loja = response.data;
-                ctrl.loja.carrinho = {produtos: [], quantidadeTotal: 0};
-                $cookies.putObject('loja', ctrl.loja);
-            },
-            function() {
-                $window.alert('erro');
-            }
-        );
-    } else {
-        ctrl.loja = $cookies.getObject('loja');
-    }
+.controller('LojaCtrl', function($http, $scope, $window, $cookies, $routeParams, $rootScope, $location, lojaService){
+    lojaService.dadosSessao();
+    $http.get('http://localhost:8080/lojas/'+$routeParams.login).then(
+        function(response) {
+            $rootScope.loja = response.data;
+            $rootScope.loja.carrinho = {produtos: [], quantidadeTotal: 0};
+            $location.path($routeParams.login+'/principal');
+        },
+        function() {
+            $window.alert('erro');
+        }
+    );
 
 
     

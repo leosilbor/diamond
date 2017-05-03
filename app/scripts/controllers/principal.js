@@ -1,15 +1,20 @@
 'use strict';
 
 angular.module('diamond')
-.controller('PrincipalCtrl', function($scope, $http, $window, $cookies){
-    $http.get('http://localhost:8080/produtos').then(
-        function(response) {
-            $scope.produtos = response.data;
-        },
-        function() {
-            $window.alert('erro');
-        }
-    );
+.controller('PrincipalCtrl', function($scope, $http, $window, $cookies, lojaService){
+    
+    lojaService.dadosLoja().then(function(loja){
+        $http.get('http://localhost:8080/produtos/'+loja.id).then(
+            function(response) {
+                $scope.produtos = response.data;
+            },
+            function() {
+                $window.alert('erro');
+            }
+        );
+    });
+
+    
 
     $scope.selecionarProduto = function(produto) {
         $scope.produto = produto;

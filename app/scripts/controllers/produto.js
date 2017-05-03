@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('diamond')
-.controller('ProdutoCtrl', function($scope, $http, $routeParams, $window){
+.controller('ProdutoCtrl', function($scope, $http, $routeParams, $window, lojaService){
+    lojaService.dadosSessao();
     $http.get('http://localhost:8080/produtos/categoria/'+$routeParams.idCategoria).then(
         function(response) {
             $scope.produtos = response.data;

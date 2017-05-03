@@ -16,31 +16,31 @@
                             <div class="form-group">
                                 <label for="name" class="col-sm-2 control-label">Nome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control input-md" id="name" placeholder="Nome">
+                                    <input type="text" class="form-control input-md" id="name" placeholder="Nome" ng-model="loja.nome">
                                 </div>
                             </div><!-- end form-group -->
                             <div class="form-group">
                                 <label for="dsc" class="col-sm-2 control-label">Descrição</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control input-md" id="dsc" placeholder="Descrição">
+                                    <input type="text" class="form-control input-md" id="dsc" placeholder="Descrição" ng-model="loja.descricao">
                                 </div>
                             </div><!-- end form-group -->
                             <div class="form-group">
                                 <label for="email" class="col-sm-2 control-label">Email <span class="text-danger">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control input-md" id="email" placeholder="Email">
+                                    <input type="email" class="form-control input-md" id="email" placeholder="Email" ng-model="loja.email">
                                 </div>
                             </div><!-- end form-group -->
                             <div class="form-group">
                                 <label for="tel" class="col-sm-2 control-label">Telefone</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control input-md" id="tel" placeholder="Telefone">
+                                    <input type="text" class="form-control input-md" id="tel" placeholder="Telefone" ng-model="loja.telefone">
                                 </div>
                             </div><!-- end form-group -->
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <a href="javascript:void(0);" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Salvar</a>
+                                    <a href="javascript:void(0);" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Alterar</a>
                                 </div>
                             </div><!-- end form-group -->
                         </form>
@@ -193,10 +193,14 @@
                                             <div class="form-group">
                                                 <label for="cat" class="col-sm-2 control-label">Categoria</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control input-md" id="cat" ng-model="produto.categoria" ng-options="categoria as categoria.nome for categoria in categorias" />
-
+                                                    <input type="text" class="form-control input-md" id="cat" ng-model="produto.categoria.nome" list="sugestoesCategoria">
+                                                    <datalist id="sugestoesCategoria">
+                                                        <option value="{{categoria.nome}}" ng-repeat="categoria  in categorias">
+                                                    </datalist>
                                                 </div>
                                             </div><!-- end form-group -->
+
+                                            
                                             
                                             
                                         </form>
@@ -214,5 +218,31 @@
                 </div><!-- end modal-content -->
             </div><!-- end modal-dialog -->
         </div><!-- end productRewiew -->
+
+        <div class="modal fade" id="myModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        
+                        <h4 class="modal-title" id="myModalLabel">Nova categoria</h4>
+                    </div><!-- end modal-header -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <select class="form-control input-md" ng-model="produto.categoria.pai" ng-options="categoria as categoria.nome for categoria in categorias" ></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-2">
+                                <a href="" ng-click="salvarProdutoNovaCategoria()" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Salvar</a>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-2">
+                                <a href="" ng-click="" class="btn btn-default round btn-md"><i class="fa fa-user mr-5"></i> Voltar</a>
+                            </div>
+                        </div><!-- end form-group -->
+                    </div><!-- end modal-body -->
+                </div><!-- end modal-content -->
+            </div><!-- end modal-dialog -->
+        </div>
     </div>
 </section>

@@ -3,32 +3,35 @@
 angular.module('diamond', ['ngRoute', 'ngCookies'])
 .config(function($routeProvider, $locationProvider) {
     $routeProvider
-    .when('/', {
-        templateUrl : 'views/principal.html',
-        controller : 'PrincipalCtrl'
-    })
-    .when('/entrar', {
+    
+    .when('/:login/entrar', {
         templateUrl : 'views/entrar.html'
     })
-    .when('/administracao', {
+    .when('/:login/administracao', {
         templateUrl : 'views/administracao.html',
         controller : 'AdministracaoCtrl'
 
     })
-    .when('/cadastrar', {
+    .when('/:login/cadastrar', {
         templateUrl : 'views/cadastrar.html'
     })
-    .when('/produtos/:idCategoria', {
+    .when('/:login/produtos/:idCategoria', {
         templateUrl : 'views/produtos.html',
         controller : 'ProdutoCtrl'
     })
-    .when('/checkout', {
+    .when('/:login/checkout', {
         templateUrl : 'views/checkout.html'
     })
-    .when('/carrinho', {
+    .when('/:login/carrinho', {
         templateUrl : 'views/carrinho.html',
         controller : 'CarrinhoCtrl'
-    });
+    })
+    .when('/:login', {
+        templateUrl : 'views/principal.html',
+        controller : 'PrincipalCtrl'
+    })
+    
+    ;
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 });
